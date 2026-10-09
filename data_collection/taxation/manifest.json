@@ -1,0 +1,22 @@
+[
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "Income-tax Act, 1961",
+    "domain": "taxation",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  },
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "Central Goods and Services Tax Act, 2017",
+    "domain": "taxation",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  }
+]

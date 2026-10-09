@@ -1,0 +1,6 @@
+# Placeholder — containerization is not required for a locally-run BE major
+# project and is intentionally deferred. Filled in only if/when needed.
+# Until then: run backend with uvicorn and frontend with `npm run dev`
+# per the README.
+version: "3.9"
+services: {}

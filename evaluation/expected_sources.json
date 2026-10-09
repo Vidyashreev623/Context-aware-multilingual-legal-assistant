@@ -1,0 +1,18 @@
+{
+  "q_contract_01": ["contract_ica_010_001"],
+  "q_contract_02": ["contract_ica_073_001"],
+  "q_contract_03_hi": ["contract_ica_010_001", "contract_ica_010_001_hi"],
+  "q_contract_04_kn": ["contract_ica_010_001", "contract_ica_010_001_kn"],
+  "q_cyber_01": ["cyber_it_066c_001"],
+  "q_cyber_02": ["cyber_it_066c_001"],
+  "q_cyber_03_hi": ["cyber_it_066c_001", "cyber_it_066c_001_hi"],
+  "q_cyber_04_kn": ["cyber_it_066c_001", "cyber_it_066c_001_kn"],
+  "q_consumer_01": ["consumer_cpa_035_001"],
+  "q_consumer_02": ["consumer_cpa_002_001"],
+  "q_family_01": ["family_hma_013_001"],
+  "q_family_02": ["family_hma_024_001"],
+  "q_property_01": ["property_tpa_106_001"],
+  "q_property_02": ["property_tpa_105_001"],
+  "q_employment_01": ["employment_ida_025f_001"],
+  "q_employment_02": ["employment_ida_002a_001"]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "source_name": "MeitY",
+    "source_url": "https://www.meity.gov.in/content/information-technology-act-2000",
+    "document_name": "Information Technology Act, 2000",
+    "domain": "cyber",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  },
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/handle/123456789/1999",
+    "document_name": "Information Technology Act, 2000 (India Code copy)",
+    "domain": "cyber",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  }
+]

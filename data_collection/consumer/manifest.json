@@ -1,0 +1,22 @@
+[
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/bitstream/123456789/18964/1/cpa.pdf",
+    "document_name": "Consumer Protection Act, 2019",
+    "domain": "consumer",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  },
+  {
+    "source_name": "Department of Consumer Affairs",
+    "source_url": "https://consumeraffairs.nic.in/sites/default/files/E%20commerce%20rules.pdf",
+    "document_name": "Consumer Protection (E-Commerce) Rules, 2020",
+    "domain": "consumer",
+    "document_type": "rules",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  }
+]

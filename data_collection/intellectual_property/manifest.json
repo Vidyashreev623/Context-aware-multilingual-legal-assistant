@@ -1,0 +1,32 @@
+[
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "The Patents Act, 1970",
+    "domain": "intellectual_property",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  },
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "The Trade Marks Act, 1999",
+    "domain": "intellectual_property",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  },
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "The Copyright Act, 1957",
+    "domain": "intellectual_property",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "Bharatiya Nyaya Sanhita, 2023",
+    "domain": "criminal",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  },
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "Indian Penal Code, 1860 (superseded)",
+    "domain": "criminal",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  }
+]

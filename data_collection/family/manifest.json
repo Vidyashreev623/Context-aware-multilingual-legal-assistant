@@ -1,0 +1,22 @@
+[
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "Hindu Marriage Act, 1955",
+    "domain": "family",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  },
+  {
+    "source_name": "India Code",
+    "source_url": "https://www.indiacode.nic.in/",
+    "document_name": "Protection of Women from Domestic Violence Act, 2005",
+    "domain": "family",
+    "document_type": "act",
+    "jurisdiction": "India",
+    "verified": true,
+    "verified_date": "2026-08-30"
+  }
+]

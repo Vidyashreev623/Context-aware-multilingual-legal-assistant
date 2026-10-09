@@ -1,0 +1,250 @@
+{
+  "per_question": [
+    {
+      "id": "q_contract_01",
+      "query": "What are the essential elements of a valid contract?",
+      "retrieved": [
+        "contract_ica_124_001",
+        "corporate_ca_166_001",
+        "property_tpa_106_001",
+        "property_tpa_105_001",
+        "consumer_cpa_002_001"
+      ],
+      "precision@5": 0.0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "hit_rate@5": 0.0
+    },
+    {
+      "id": "q_contract_02",
+      "query": "What compensation can I claim if the other party breaches our contract?",
+      "retrieved": [
+        "contract_ica_124_001",
+        "contract_ica_073_001",
+        "cyber_it_043_001",
+        "property_tpa_106_001",
+        "cyber_it_066c_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 0.5,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_contract_03_hi",
+      "query": "एक वैध अनुबंध के लिए आवश्यक तत्व क्या हैं?",
+      "retrieved": [
+        "contract_ica_010_001_hi",
+        "contract_ica_010_001",
+        "contract_ica_124_001",
+        "family_hma_024_001",
+        "criminal_ipc_499_001"
+      ],
+      "precision@5": 0.4,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_contract_04_kn",
+      "query": "ಮಾನ್ಯವಾದ ಒಪ್ಪಂದಕ್ಕೆ ಅಗತ್ಯವಾದ ಅಂಶಗಳು ಯಾವುವು?",
+      "retrieved": [
+        "consumer_cpa_035_001",
+        "property_tpa_105_001",
+        "contract_ica_010_001",
+        "contract_ica_073_001",
+        "contract_ica_124_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 0.5,
+      "mrr": 0.3333333333333333,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_cyber_01",
+      "query": "What is Section 66C of the IT Act about?",
+      "retrieved": [
+        "corporate_ca_166_001",
+        "contract_ica_073_001",
+        "contract_ica_010_001",
+        "contract_ica_124_001",
+        "consumer_cpa_002_001"
+      ],
+      "precision@5": 0.0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "hit_rate@5": 0.0
+    },
+    {
+      "id": "q_cyber_02",
+      "query": "What is the punishment for identity theft under Indian cyber law?",
+      "retrieved": [
+        "cyber_it_066c_001_kn",
+        "contract_ica_073_001",
+        "family_hma_024_001",
+        "contract_ica_010_001",
+        "cyber_it_066c_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 0.2,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_cyber_03_hi",
+      "query": "भारतीय साइबर कानून के तहत पहचान की चोरी क्या है?",
+      "retrieved": [
+        "cyber_it_066c_001_hi",
+        "cyber_it_066c_001_kn",
+        "contract_ica_010_001_hi",
+        "cyber_it_066c_001",
+        "consumer_cpa_035_001"
+      ],
+      "precision@5": 0.4,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_cyber_04_kn",
+      "query": "ಭಾರತೀಯ ಸೈಬರ್ ಕಾನೂನಿನ ಅಡಿಯಲ್ಲಿ ಗುರುತಿನ ಕಳ್ಳತನ ಎಂದರೇನು?",
+      "retrieved": [
+        "cyber_it_066c_001_kn",
+        "cyber_it_066c_001_hi",
+        "cyber_it_066c_001",
+        "family_hma_024_001",
+        "family_hma_013_001"
+      ],
+      "precision@5": 0.4,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_consumer_01",
+      "query": "Where can I file a complaint about a defective product?",
+      "retrieved": [
+        "consumer_cpa_035_001",
+        "property_tpa_105_001",
+        "family_hma_013_001",
+        "consumer_cpa_002_001",
+        "corporate_ca_166_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_consumer_02",
+      "query": "What counts as a deficiency in service under consumer law?",
+      "retrieved": [
+        "consumer_cpa_035_001",
+        "consumer_cpa_002_001",
+        "property_tpa_105_001",
+        "corporate_ca_166_001",
+        "employment_ida_025f_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 0.5,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_family_01",
+      "query": "On what grounds can a Hindu marriage be dissolved by divorce?",
+      "retrieved": [
+        "family_hma_013_001",
+        "cyber_it_066d_001",
+        "consumer_cpa_035_001",
+        "property_tpa_105_001",
+        "contract_ica_124_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_family_02",
+      "query": "Can a spouse with no income claim maintenance during divorce proceedings?",
+      "retrieved": [
+        "family_hma_024_001",
+        "property_tpa_105_001",
+        "family_hma_013_001",
+        "cyber_it_066d_001",
+        "consumer_cpa_035_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_property_01",
+      "query": "How much notice is required to terminate a residential lease?",
+      "retrieved": [
+        "property_tpa_106_001",
+        "consumer_cpa_002_001",
+        "property_tpa_105_001",
+        "contract_ica_010_001",
+        "contract_ica_073_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_property_02",
+      "query": "What is a lease of immovable property under the Transfer of Property Act?",
+      "retrieved": [
+        "property_tpa_105_001",
+        "corporate_ca_166_001",
+        "property_tpa_106_001",
+        "consumer_cpa_002_001",
+        "contract_ica_124_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    },
+    {
+      "id": "q_employment_01",
+      "query": "What notice and compensation is required before retrenching a workman?",
+      "retrieved": [
+        "contract_ica_010_001",
+        "consumer_cpa_002_001",
+        "cyber_it_066d_001",
+        "property_tpa_105_001",
+        "cyber_it_066c_001"
+      ],
+      "precision@5": 0.0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "hit_rate@5": 0.0
+    },
+    {
+      "id": "q_employment_02",
+      "query": "Is termination of a workman's employment considered an industrial dispute?",
+      "retrieved": [
+        "employment_ida_002a_001",
+        "contract_ica_010_001",
+        "property_tpa_105_001",
+        "consumer_cpa_002_001",
+        "family_hma_013_001"
+      ],
+      "precision@5": 0.2,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "hit_rate@5": 1.0
+    }
+  ],
+  "summary": {
+    "precision@5": 0.2,
+    "recall@5": 0.78125,
+    "mrr": 0.6583333333333333,
+    "hit_rate@5": 0.8125
+  }
+}

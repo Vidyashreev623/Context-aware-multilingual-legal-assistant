@@ -1,0 +1,55 @@
+# Environment
+.env
+.env.*
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+build/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploaded user files
+uploads/
+
+# Vector database
+vector_store/
+
+# Archives
+*.zip
+
+# Local/user data
+users.txt
+
+# IDE
+.vscode/
+.idea/
+# Raw legal documents
+data/raw/
+
+# Generated chunks and embeddings
+data/processed/
+data/embeddings/
+
+# Collected source PDFs
+data_collection/*/collected/
+
+# Debug files
+family_debug.txt
+
+# Local databases and user data
+*.db
+*.sqlite
+*.sqlite3
+users.txt
+uploads/
+vector_store/
