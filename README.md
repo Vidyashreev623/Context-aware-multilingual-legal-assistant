@@ -1,136 +1,227 @@
-# NyayaAI — Context-Aware Multilingual Indian Legal Assistant
+# Context-Aware Multilingual Indian Legal Assistant
 
-A RAG-based legal assistant for Indian law, supporting English, Hindi, and
-Kannada, with text/voice/document input and Gemini-generated, source-grounded
-answers.
+An AI-powered legal assistant designed to help users understand Indian law through multilingual conversations, document analysis, voice interaction, and source-grounded answers.
 
-**Status: Phases 1-16 complete** (project setup through automated
-testing) — see `PHASES.md` for what each phase built and how it was
-verified. **Phase 17 (this commit): documentation.** The one thing not
-done yet is Phase 2's *real* data collection (fetching actual Acts/
-judgments) and the network-dependent installs (`sentence-transformers`,
-`chromadb`/`faiss-cpu`, `faster-whisper`, `google-generativeai`,
-`fastapi`, `pytest`) — this sandbox has no network egress to do either,
-so every piece of RAG-pipeline logic is verified offline via dependency
-injection (fake providers) instead. See `MANUAL_TEST_CHECKLIST.md` for
-exactly what to run, for real, once you have network access and a
-`GEMINI_API_KEY`.
+The application uses **Retrieval-Augmented Generation (RAG)** to retrieve relevant legal information and generate contextual responses using Google's Gemini API.
 
-## Project layout
+## Overview
 
+Accessing and understanding legal information can be challenging because legal documents are lengthy, complex, and often difficult for ordinary users to interpret. Language barriers can make this even harder.
+
+This project aims to make Indian legal information more accessible through a conversational interface that supports **English, Hindi, and Kannada**. Users can ask legal questions, upload documents, and interact using voice input while receiving answers grounded in retrieved legal sources.
+
+## Key Features
+
+- **Multilingual Legal Assistance:** Ask questions and receive responses in English, Hindi, or Kannada.
+- **Context-Aware Conversations:** Uses conversation history to understand follow-up questions and maintain context.
+- **Retrieval-Augmented Generation (RAG):** Retrieves relevant legal information before generating an answer.
+- **Source-Grounded Responses:** Provides citations and source metadata from retrieved documents to help users verify answers.
+- **Document Analysis:** Upload PDF, DOCX, or TXT files and ask questions about their contents.
+- **Voice Input:** Ask questions using microphone input and speech transcription.
+- **Legal Domain Classification:** Identifies the relevant legal domain and query type to improve retrieval.
+- **Ambiguity Detection:** Identifies unclear questions and supports clarification.
+- **Conversation Management:** Create, continue, rename, and delete conversations.
+- **Retrieval Evaluation:** Includes evaluation scripts for metrics such as Precision@K, Recall@K, Mean Reciprocal Rank (MRR), and Hit Rate.
+
+## Technology Stack
+
+| Component | Technologies |
+|---|---|
+| Frontend | React, TypeScript, Vite, Tailwind CSS |
+| Backend | Python, FastAPI |
+| Language Model | Google Gemini API |
+| Retrieval Architecture | Retrieval-Augmented Generation (RAG) |
+| Embeddings | Sentence Transformers with multilingual embeddings |
+| Vector Search | ChromaDB or FAISS, depending on configuration |
+| Database | SQLite |
+| Document Processing | PDF, DOCX, and text extraction utilities |
+| Speech Processing | faster-whisper |
+| Testing | Python test suite and evaluation scripts |
+| Version Control | Git and GitHub |
+
+## System Architecture
+
+The application follows a retrieval-based question-answering workflow.
+
+1. **User Input:** The user enters a question through text or voice, or uploads a document.
+2. **Language and Query Understanding:** The system detects the language, classifies the legal domain, and identifies ambiguity.
+3. **Context Processing:** Conversation history is used to interpret follow-up questions.
+4. **Legal Information Retrieval:** Relevant document chunks are retrieved from the legal knowledge base.
+5. **Ranking and Filtering:** Retrieved content is filtered by domain and ranked for relevance.
+6. **Answer Generation:** Gemini generates a response using the retrieved context.
+7. **Source Presentation:** The answer and available source information are returned to the user in the interface.
+
+Uploaded documents can also be processed as a source of information for answering questions.
+
+## Project Structure
+
+```text
+context-aware-multilingual-legal-assistant/
+├── backend/
+│   ├── app/
+│   │   ├── api/              # API endpoints
+│   │   ├── auth/             # Authentication and security
+│   │   ├── database/         # Database models and repositories
+│   │   ├── services/         # RAG, Gemini, retrieval, language and voice
+│   │   └── main.py           # FastAPI application entry point
+│   ├── tests/                # Backend tests
+│   └── requirements.txt
+├── frontend/
+│   ├── src/
+│   │   ├── components/       # Reusable UI components
+│   │   ├── context/          # Application context
+│   │   ├── hooks/            # Custom React hooks
+│   │   ├── pages/            # Application pages
+│   │   └── services/         # Frontend API services
+│   └── package.json
+├── data_collection/          # Legal source manifests and source lists
+├── scripts/                  # Data collection and processing pipeline
+├── scripts2/                 # Additional pipeline scripts
+├── evaluation/               # Retrieval evaluation tools and results
+├── docker-compose.yml
+├── ARCHITECTURE.md
+├── RAG_PIPELINE.md
+├── API_DOCUMENTATION.md
+├── DATASET.md
+└── README.md
 ```
-nyaya-ai/
-├── data_collection/   # per-domain source lists + raw downloads (Phase 2)
-├── data/              # raw/ processed/ embeddings/, per legal domain (Phase 2-5)
-├── scripts/           # extraction, cleaning, chunking, embeddings, vectorstore
-├── backend/           # FastAPI app (RAG, Gemini, DB, APIs) + tests/
-├── frontend/          # React + TypeScript + Vite chat UI
-├── vector_store/      # Chroma/FAISS index files (gitignored, built by scripts/vectorstore)
-├── uploads/            # user-uploaded documents (gitignored)
-└── evaluation/         # retrieval evaluation harness + results (Phase 15)
+
+## Getting Started
+
+### Prerequisites
+
+Install the following before running the application:
+
+- Python 3.10 or a compatible version supported by the project dependencies
+- Node.js and npm
+- Git
+- A Google Gemini API key
+- Internet access to install dependencies and download required models
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Vidyashreev623/Context-aware-multilingual-legal-assistant.git
+cd Context-aware-multilingual-legal-assistant
 ```
 
-Also see: `ARCHITECTURE.md` (system design), `RAG_PIPELINE.md` (baseline
-vs improved pipeline detail), `DATASET.md` (collection -> processing ->
-embeddings -> vector store), `EVALUATION.md` (Phase 15 methodology +
-results), `API_DOCUMENTATION.md` (every endpoint), `RULES.md`
-(non-negotiable implementation rules), `PHASES.md` (build log).
+### 2. Set Up the Backend
 
-## Running locally
+Create and activate a virtual environment from the project root.
 
-### Backend
+**Windows PowerShell:**
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r backend/requirements.txt
+```
+
+**macOS/Linux:**
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r backend/requirements.txt
+```
+
+Create `backend/.env` and configure the environment variables required by the application, including your Gemini API key and any database, embedding, or vector-store settings used by your configuration.
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+Keep your actual API key private. Never commit `.env` files to GitHub.
+
+Start the backend:
 
 ```bash
 cd backend
-python3 -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env
-# edit .env: set GEMINI_API_KEY, and adjust VECTOR_STORE_BACKEND/
-# EMBEDDING_MODEL/STT_MODEL_SIZE if you want non-default providers
 uvicorn app.main:app --reload --port 8000
 ```
 
-Visit http://localhost:8000/docs for the interactive API docs, or
-http://localhost:8000/api/health for a liveness check.
+Backend endpoints:
 
-Run the test suite:
+- API documentation: http://localhost:8000/docs
+- Health check: http://localhost:8000/api/health
 
-```bash
-pytest backend/tests/ -v                      # full suite (needs network for deps)
-python backend/tests/run_tests.py             # dependency-free subset, no install needed
-```
+### 3. Set Up the Frontend
 
-### Data pipeline (once you have real sources)
-
-```bash
-# 1. Collect (see data_collection/<domain>/sources.md for what to fetch)
-python scripts/collection/collect_cyber.py         # per domain
-
-# 2. Process (extraction -> cleaning -> structure detection -> chunking -> metadata)
-python scripts/processing/process_cyber.py         # per domain
-
-# 3. Embed
-python scripts/embeddings/generate_embeddings.py
-
-# 4. Build the vector index
-python scripts/vectorstore/build_index.py
-
-# 5. Evaluate retrieval
-python evaluation/evaluate.py
-```
-
-### Frontend
+Open another terminal from the project root:
 
 ```bash
 cd frontend
 npm install
-cp .env.example .env
 npm run dev
 ```
 
-Visit http://localhost:5173.
+Open the local URL printed by Vite, usually:
 
-## Current capabilities
+http://localhost:5173
 
-- Real end-to-end RAG: language detection -> domain/query-type/
-  jurisdiction classification -> ambiguity detection -> query
-  reformulation against conversation history -> domain-filtered
-  retrieval -> reranking -> Gemini -> grounded, sourced answer.
-- English, Hindi, and Kannada supported at every stage: query
-  understanding, retrieval (shared multilingual embedding space), and
-  response language.
-- File upload (PDF/DOCX/TXT) is processed through the same
-  extraction/chunking/embedding pipeline as the legal knowledge base,
-  and questions can be answered from an uploaded document, the legal
-  knowledge base, or both — with each source clearly labeled.
-- Voice input: browser microphone -> `faster-whisper` transcription ->
-  the same chat pipeline a typed question uses.
-- Real conversation history: new/previous/rename/delete/continue, backed
-  by SQLite.
-- Source citations always come from actual retrieved-chunk metadata —
-  never fabricated (see `RULES.md`).
-- Retrieval evaluation harness (Precision@K, Recall@K, MRR, Hit Rate,
-  baseline vs improved, multilingual parity) — currently run against a
-  synthetic fixture corpus since real data hasn't been collected in
-  this sandbox yet; see `EVALUATION.md`.
-- 122 backend tests passing with zero installed dependencies
-  (`backend/tests/run_tests.py`); 5 more test files need
-  `pytest`/`fastapi`/`chromadb`/`faiss`/`sentence-transformers`/
-  `faster-whisper` installed to run (see `PHASES.md`).
+Configure the frontend API base URL according to the project's frontend environment configuration.
 
-## What's still needed before a real demo
+### 4. Prepare the Legal Knowledge Base
 
-1. Real data collection (Phase 2) — this repo's `data_collection/` and
-   `data/raw/` are intentionally empty; no sources are fabricated.
-2. Install the real providers (`pip install -r backend/requirements.txt`
-   with network access) and set a real `GEMINI_API_KEY`.
-3. Work through `MANUAL_TEST_CHECKLIST.md` against the live app.
-4. Re-run `evaluation/evaluate.py` against the real, populated corpus
-   and update `EVALUATION.md`'s numbers.
+The RAG pipeline requires legal documents to be collected and processed before meaningful retrieval from the legal knowledge base can be demonstrated.
 
-## Roadmap
+The general workflow is:
 
-See `PHASES.md` for the full 17-phase build log — each phase was
-delivered and verified (per that phase's own testing constraints)
-before the next began.
+1. Collect legal documents from appropriate sources.
+2. Extract and normalize document text.
+3. Split documents into meaningful chunks and attach metadata.
+4. Generate multilingual embeddings.
+5. Build the vector index.
+6. Evaluate retrieval quality.
+
+Refer to `DATASET.md` and `RAG_PIPELINE.md` for the project's data-processing workflow and configuration.
+
+## Testing and Evaluation
+
+The project includes backend tests and a retrieval evaluation harness.
+
+Run the dependency-free test subset:
+
+```bash
+python backend/tests/run_tests.py
+```
+
+Run the pytest suite after installing the required dependencies:
+
+```bash
+pytest backend/tests/ -v
+```
+
+Evaluate retrieval:
+
+```bash
+python evaluation/evaluate.py
+```
+
+**Evaluation note:** Retrieval results produced using synthetic fixtures should not be interpreted as real-world legal retrieval performance. Evaluation against a populated legal corpus is required to assess practical effectiveness.
+
+## Current Project Status
+
+The application code, frontend, backend services, data-processing scripts, tests, and documentation are included in the repository.
+
+Before demonstrating the complete system with real legal queries, ensure that the required dependencies and providers are configured, real legal documents have been collected and processed, the vector index has been built, and the live application has been tested end to end.
+
+## Future Improvements
+
+- Expand and validate the legal knowledge base using authoritative Indian legal sources.
+- Improve retrieval accuracy and multilingual evaluation using real legal queries.
+- Enhance answer quality through additional retrieval and ranking experiments.
+- Improve deployment, monitoring, and production security.
+- Expand automated and manual testing across languages, legal domains, and document types.
+
+## Disclaimer
+
+This project is intended for legal information and educational purposes. AI-generated responses may be incomplete or inaccurate and should not be treated as a substitute for advice from a qualified legal professional. Users should verify important information against authoritative legal sources.
+
+## Author
+
+**Vidyashree V**
+
+GitHub: [Vidyashreev623](https://github.com/Vidyashreev623)
+
+Project Repository: [Context-Aware Multilingual Indian Legal Assistant](https://github.com/Vidyashreev623/Context-aware-multilingual-legal-assistant)
