@@ -26,7 +26,7 @@ export default function Login() {
   };
 
   return (
-    <AuthLayout title="Welcome back" subtitle="Log in to continue to NyayaAI.">
+    <AuthLayout title="Welcome back" subtitle="Log in to continue to Legal Assistant.">
       <form onSubmit={submit}>
         <ErrorBox message={error} />
         <input
