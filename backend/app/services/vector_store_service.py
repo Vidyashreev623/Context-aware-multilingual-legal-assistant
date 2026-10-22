@@ -1,17 +1,17 @@
-"""
+﻿"""
 Vector store service (Phase 5, spec section 16).
 
 Wraps whichever concrete vector database NyayaAI uses (Chroma or FAISS)
 behind one small interface:
 
     VectorStore
-        ├── add(records)      -- upsert chunks + their embeddings
-        ├── search(...)       -- top-K nearest neighbours, optional metadata filter
-        ├── delete(chunk_ids)
-        ├── update(records)   -- upsert semantics
-        ├── filter(where)     -- metadata-only lookup
-        ├── count()
-        └── persist()
+        â”œâ”€â”€ add(records)      -- upsert chunks + their embeddings
+        â”œâ”€â”€ search(...)       -- top-K nearest neighbours, optional metadata filter
+        â”œâ”€â”€ delete(chunk_ids)
+        â”œâ”€â”€ update(records)   -- upsert semantics
+        â”œâ”€â”€ filter(where)     -- metadata-only lookup
+        â”œâ”€â”€ count()
+        â””â”€â”€ persist()
 
 Rule 9/10:
 - RAG components remain modular.
@@ -30,10 +30,10 @@ The domain is stored as metadata so retrieval can later use:
 Storage layout:
 
     vector_store/
-    ├── chroma/
-    └── faiss/
-        ├── index.faiss
-        └── metadata.json
+    â”œâ”€â”€ chroma/
+    â””â”€â”€ faiss/
+        â”œâ”€â”€ index.faiss
+        â””â”€â”€ metadata.json
 """
 
 from __future__ import annotations
@@ -63,7 +63,7 @@ from app.config import get_settings
 # Example:
 #
 #     7681 records
-#          ↓
+#          â†“
 #     5000 + 2681
 #
 # This prevents:
@@ -1080,9 +1080,16 @@ def get_vector_store() -> VectorStore:
                 )
             )
 
+        elif backend == "postgres":
+
+            from app.services.postgres_vector_store import PostgresVectorStore
+
+            _store_instance = PostgresVectorStore()
+
         else:
 
             raise ValueError(
+
                 f"Unknown VECTOR_STORE_BACKEND "
                 f"'{settings.VECTOR_STORE_BACKEND}'. "
                 f"Expected 'chroma' or 'faiss'."

@@ -65,7 +65,7 @@ from dataclasses import dataclass
 _CHAPTER_RE = re.compile(
     r"^\s*CHAPTER\s+([IVXLCDM]+|\d+)"
     r"\b[.\-\u2013\u2014:]?\s*(.*)$",
-    re.IGNORECASE,
+    re.IGNORECASE | re.MULTILINE,
 )
 
 

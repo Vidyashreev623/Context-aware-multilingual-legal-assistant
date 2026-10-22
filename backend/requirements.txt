@@ -33,25 +33,21 @@ faiss-cpu==1.8.0
 
 
 # ============================================================
-# PHASE 6: GEMINI LLM
+# PHASE 6: LLM PROVIDERS — GROK + GEMINI
 # ============================================================
 
-# New Google GenAI SDK.
-# Used by:
-# from google import genai
-
+# Google Gemini SDK
 google-genai
+
+# OpenAI-compatible SDK for Grok (xAI)
+openai
 
 
 # ============================================================
 # PHASE 10: CONVERSATION PERSISTENCE
 # ============================================================
 
-# Conversation persistence uses PostgreSQL/Supabase
-# through psycopg.
-#
-# SQLite is NOT used for the application database.
-
+# PostgreSQL / Supabase
 psycopg[binary]==3.2.3
 psycopg-pool==3.2.3
 

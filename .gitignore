@@ -53,3 +53,15 @@ family_debug.txt
 users.txt
 uploads/
 vector_store/
+# Local deployment experiments and backups
+onnx_test_env/
+deployment_backup/
+tests_backup/
+*.bak
+*.bak2
+*.before_deployment
+*.before-*
+*.pre-deploy-backup
+*.fixed
+backend_review_diff.txt
+backend/check_vector_store.py

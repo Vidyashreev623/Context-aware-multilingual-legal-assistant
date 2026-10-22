@@ -171,7 +171,7 @@ def _call_llm(llm: LLMProvider, system_instructions: str, user_prompt: str, reso
     base = {"language": resolved_language, "sources": sources}
     if classification_dict is not None:
         base["classification"] = classification_dict
-        base["ambiguous"] = False
+        base["ambiguous"] = bool(classification_dict.get("ambiguity", False))
 
     _llm_t0 = time.perf_counter()
     try:

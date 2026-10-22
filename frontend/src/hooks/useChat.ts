@@ -24,11 +24,10 @@ export function useChat() {
 
   const sendMessage = useCallback(
     async (
-      text: string,
-      language: Language,
-      documentIds: string[] = [],
-      attachedDocuments: AttachedDocument[] = []
-    ) => {
+  text: string,
+  language: Language,
+  documentIds: string[] = []
+) => {
       const userMsg: ChatMessage = {
         id: crypto.randomUUID(),
         role: "user",

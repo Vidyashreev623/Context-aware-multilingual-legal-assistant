@@ -1,4 +1,4 @@
-"""
+﻿"""
 NyayaAI backend entrypoint.
 """
 from fastapi import FastAPI
@@ -24,21 +24,7 @@ def _startup() -> None:
     init_db()
     ensure_auth_schema()
 
-    from app.services.embedding_service import get_embedding_provider
-    try:
-        get_embedding_provider().embed_text("warmup")
-        print("[STARTUP] Embedding model warmed up.")
-    except Exception as e:
-        print(f"[STARTUP] Embedding warmup failed (will retry on first request): {e}")
-
-    from app.services.gemini_service import get_llm_provider
-    try:
-        get_llm_provider().generate(
-            "You are a warmup check. Reply with a single word.", "ping"
-        )
-        print("[STARTUP] Gemini client warmed up.")
-    except Exception as e:
-        print(f"[STARTUP] Gemini warmup failed (will retry on first request): {e}")
+    print("[STARTUP] Database initialized. AI models load on demand.")
 
 
 app.add_middleware(
